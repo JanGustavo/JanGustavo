@@ -22,12 +22,12 @@ const PROJECTS: Project[] = [
   {
     id: 'stockwise',
     name: 'StockWise.NET',
-    tagline: 'Sistema de controle de estoque com CI/CD',
+    tagline: 'Sistema de controle de estoque com CI/CD automatizado',
     description:
-      'Console app em .NET 10 com CRUD completo de produtos, gestão de pedidos (vendas e reposições), injeção de dependência, exceções customizadas e pipeline de CI automatizado via GitHub Actions.',
-    highlight: 'GitHub Actions CI + PostgreSQL + Repository Pattern + DI nativo',
-    tech: ['C#', '.NET 10', 'PostgreSQL', 'EF Core', 'GitHub Actions'],
-    tags: ['Backend', 'CI/CD', '.NET'],
+      'Aplicação fullstack em .NET 10 com arquitetura em camadas (Clean Architecture), CRUD completo de produtos, gestão de pedidos (vendas e reposições), injeção de dependência nativa, exceções customizadas e pipeline CI/CD automatizado via GitHub Actions. Frontend responsivo em Blazor WebAssembly com consumo assíncrono da API RESTful.',
+    highlight: 'Clean Architecture + GitHub Actions CI/CD + PostgreSQL + EF Core + Blazor WASM',
+    tech: ['C#', '.NET 10', 'PostgreSQL', 'EF Core', 'GitHub Actions', 'Blazor WASM'],
+    tags: ['Backend', 'CI/CD', '.NET', 'Fullstack'],
     github: 'https://github.com/JanGustavo/CRUD-Controle-de-estoque',
     color: '#4afa8a',
     accentVar: 'green',
@@ -37,12 +37,12 @@ const PROJECTS: Project[] = [
   {
     id: 'adotapet',
     name: 'AdotaPet API',
-    tagline: 'API RESTful de adoção — feed estilo Tinder',
+    tagline: 'Backend RESTful com feed estilo Tinder para adoção de pets',
     description:
-      'Backend completo para plataforma de adoção de pets. Autenticação JWT com BCrypt, feed paginado com lógica de interações (like/dislike), arquitetura Minimal API em camadas e documentação via Swagger.',
-    highlight: 'JWT + BCrypt + EF Core Migrations + Swagger + arquitetura em camadas',
+      'API RESTful robusta em .NET 8 para plataforma de adoção de animais. Implementa autenticação JWT com hash BCrypt, feed paginado com lógica de interações (like/dislike), arquitetura em camadas (Minimal APIs), Entity Framework Core com migrations, documentação interativa via Swagger e tratamento de erros estruturado.',
+    highlight: 'JWT + BCrypt + EF Core Migrations + Swagger + Arquitetura em Camadas',
     tech: ['C#', '.NET 8', 'Entity Framework', 'SQLite', 'JWT', 'Swagger'],
-    tags: ['API REST', 'Backend', '.NET'],
+    tags: ['API REST', 'Backend', '.NET', 'Autenticação'],
     github: 'https://github.com/JanGustavo/AdotaPet-Api',
     color: '#4afa8a',
     accentVar: 'green',
@@ -51,13 +51,13 @@ const PROJECTS: Project[] = [
   },
   {
     id: 'moletom',
-    name: 'MoleTom',
-    tagline: 'E-commerce com IA generativa e PIX nativo',
+    name: 'MoleTom Store',
+    tagline: 'E-commerce print-on-demand com IA generativa e PIX nativo',
     description:
-      'Loja de moletom print-on-demand onde cada estampa é gerada por IA. O usuário descreve a arte, a IA cria, o Pillow compõe sobre a foto real do produto e o pagamento é feito via PIX — do QR code ao webhook de confirmação com confetti.',
-    highlight: 'PIX real (BR Code/EMV + CRC-16) + Pollinations.ai + Pillow compositing',
+      'Plataforma de e-commerce inovadora onde usuários criam estampas personalizadas via IA generativa. O sistema integra geração de imagens (Pollinations.ai), composição de mockups com Pillow, pagamentos PIX com geração dinâmica de BR Code/EMV + CRC-16, autenticação completa e galeria comunitária com votação. Deploy em Render com PostgreSQL via Supabase.',
+    highlight: 'IA Generativa (Pollinations.ai) + PIX Real (BR Code/EMV) + Pillow Compositing',
     tech: ['Python', 'Flask', 'SQLAlchemy', 'Pillow', 'PIX/EMV', 'Pollinations.ai'],
-    tags: ['E-commerce', 'IA Generativa', 'Pagamento'],
+    tags: ['E-commerce', 'IA Generativa', 'Pagamento', 'Python'],
     github: 'https://github.com/JanGustavo/MoleTom-store',
     color: '#f5a623',
     accentVar: 'amber',
@@ -67,13 +67,13 @@ const PROJECTS: Project[] = [
 
  {
     id: 'radar',
-    name: 'PromoPulse TELEGRAM',
-    tagline: 'Ecossistema de monitoramento em tempo real que filtra e centraliza ofertas de múltiplos canais do Telegram. Automatiza a curadoria de promoções através de regras inteligentes e blacklist dinâmica.',
+    name: 'Telegram Radar',
+    tagline: 'Monitor de ofertas em tempo real com extensão de navegador',
     description:
-      'Bot de Telegram que monitora preços de produtos em lojas online e envia alertas quando há mudanças significativas.',
-    highlight: 'Telegram API + Web Scraping + python + fastApi',
-    tech: ['Python', 'FastAPI', 'BeautifulSoup', 'Requests', 'telethon', 'Asyncio', 'Chrome Extension'],
-    tags: ['Bot', 'Telegram', 'Web Scraping'],
+      'Solução completa fullstack para monitoramento automatizado de grupos e canais do Telegram. Backend em FastAPI com Telethon para integração MTProto, processamento assíncrono com Asyncio, web scraping com BeautifulSoup. Extensão de navegador moderna com design glassmorphism, filtros inteligentes, blacklist dinâmica e sincronização de estado em tempo real. Deploy containerizado com Docker.',
+    highlight: 'Telegram MTProto API + FastAPI + Telethon + Chrome Extension + Docker',
+    tech: ['Python', 'FastAPI', 'Telethon', 'BeautifulSoup', 'Asyncio', 'JavaScript', 'Docker'],
+    tags: ['Bot', 'Telegram', 'Web Scraping', 'Fullstack'],
     github: 'https://github.com/JanGustavo/telegram-PromoPulse-extension',
     color: '#f5a623',
     accentVar: 'amber',
@@ -84,9 +84,97 @@ const PROJECTS: Project[] = [
 
 const SKILLS = {
   'Linguagens': ['C#', 'Python', 'TypeScript', 'JavaScript', 'Java', 'SQL'],
-  'Frameworks': ['ASP.NET', 'Entity Framework', 'Flask', 'Angular', 'Bootstrap'],
-  'Banco de dados': ['PostgreSQL', 'SQLite', 'SQL Server'],
-  'Ferramentas': ['Git', 'GitHub Actions', 'Swagger', 'VS Code', 'Pillow'],
+  'Frameworks': ['ASP.NET', 'Entity Framework', 'Flask', 'FastAPI', 'Angular', 'Bootstrap'],
+  'Banco de dados': ['PostgreSQL', 'SQLite', 'SQL Server', 'Supabase'],
+  'Ferramentas & DevOps': ['Git', 'GitHub Actions', 'Docker', 'Swagger', 'VS Code'],
+}
+
+/* ─── hook: música retro ─── */
+function useChiptune() {
+  const audioContextRef = useRef<AudioContext | null>(null)
+  const oscillatorsRef = useRef<OscillatorNode[]>([])
+  const [isPlaying, setIsPlaying] = useState(false)
+  const [bars, setBars] = useState([0, 0, 0, 0])
+
+  const playNote = (frequency: number, duration: number, time: number) => {
+    if (!audioContextRef.current) return
+    const ctx = audioContextRef.current
+    const osc = ctx.createOscillator()
+    const gain = ctx.createGain()
+    osc.type = 'square'
+    osc.frequency.value = frequency
+    osc.connect(gain)
+    gain.connect(ctx.destination)
+    gain.gain.setValueAtTime(0.1, time)
+    gain.gain.exponentialRampToValueAtTime(0.01, time + duration)
+    osc.start(time)
+    osc.stop(time + duration)
+    oscillatorsRef.current.push(osc)
+  }
+
+  const playMelody = () => {
+    if (!audioContextRef.current) {
+      audioContextRef.current = new (window.AudioContext || (window as any).webkitAudioContext)()
+    }
+    const ctx = audioContextRef.current
+    const now = ctx.currentTime
+    const tempo = 0.15
+    
+    // Melodia clássica retro (tipo Super Mario)
+    const notes = [
+      { freq: 330, dur: tempo },
+      { freq: 330, dur: tempo },
+      { freq: 330, dur: tempo },
+      { freq: 262, dur: tempo },
+      { freq: 330, dur: tempo },
+      { freq: 392, dur: tempo * 2 },
+      { freq: 196, dur: tempo * 2 },
+      { freq: 262, dur: tempo },
+      { freq: 196, dur: tempo },
+      { freq: 165, dur: tempo },
+      { freq: 220, dur: tempo },
+      { freq: 247, dur: tempo },
+      { freq: 262, dur: tempo * 2 },
+    ]
+
+    let time = now
+    notes.forEach(note => {
+      playNote(note.freq, note.dur, time)
+      time += note.dur
+    })
+
+    // Animar equalizer
+    const animateBars = () => {
+      setBars([
+        Math.random() * 100,
+        Math.random() * 80,
+        Math.random() * 90,
+        Math.random() * 70,
+      ])
+    }
+    const interval = setInterval(animateBars, 100)
+    setTimeout(() => clearInterval(interval), time - now)
+  }
+
+  const toggleMusic = () => {
+    if (isPlaying) {
+      oscillatorsRef.current.forEach(osc => {
+        try { osc.stop() } catch (e) {}
+      })
+      oscillatorsRef.current = []
+      setIsPlaying(false)
+      setBars([0, 0, 0, 0])
+    } else {
+      setIsPlaying(true)
+      playMelody()
+      setTimeout(() => {
+        setIsPlaying(false)
+        setBars([0, 0, 0, 0])
+      }, 3000)
+    }
+  }
+
+  return { toggleMusic, isPlaying, bars }
 }
 
 /* ─── hook: typewriter ─── */
@@ -137,6 +225,25 @@ function useVisible(threshold = 0.15) {
 
 /* ─── componentes ─── */
 
+function CopyEmailLink({ email, defaultText, style }: { email: string; defaultText: string; style?: React.CSSProperties }) {
+  const [copied, setCopied] = useState(false)
+  return (
+    <a
+      href={`mailto:${email}`}
+      onClick={(e) => {
+        e.preventDefault()
+        navigator.clipboard.writeText(email)
+        setCopied(true)
+        setTimeout(() => setCopied(false), 2000)
+      }}
+      style={{ ...style, cursor: 'pointer' }}
+      title="Copia o endereço de email para a área de transferência"
+    >
+      {copied ? 'email copiado!' : defaultText}
+    </a>
+  )
+}
+
 function Cursor() {
   return (
     <span style={{
@@ -153,9 +260,9 @@ function Cursor() {
 
 function StatusBadge({ status }: { status: Project['status'] }) {
   const map = {
-    live: { label: 'online', color: '#4afa8a' },
-    mvp:  { label: 'MVP',    color: '#f5a623' },
-    wip:  { label: 'WIP',    color: '#888' },
+    live: { label: 'live', color: '#4afa8a' },
+    mvp:  { label: 'mvp',    color: '#f5a623' },
+    wip:  { label: 'wip',    color: '#888' },
   }
   const s = map[status]
   return (
@@ -163,10 +270,11 @@ function StatusBadge({ status }: { status: Project['status'] }) {
       fontSize: '11px',
       color: s.color,
       border: `1px solid ${s.color}`,
-      padding: '1px 7px',
-      borderRadius: '2px',
+      padding: '2px 8px',
+      borderRadius: '3px',
       letterSpacing: '0.08em',
       textTransform: 'uppercase',
+      fontWeight: 600,
     }}>
       {status === 'live' && (
         <span style={{
@@ -189,14 +297,15 @@ function CIBadge({ active }: { active?: boolean }) {
   return (
     <span style={{
       fontSize: '10px',
-      color: '#4db8ff', // Um azul para diferenciar do verde/amber
+      color: '#4db8ff',
       border: '1px solid #4db8ff',
-      padding: '1px 6px',
-      borderRadius: '2px',
+      padding: '2px 8px',
+      borderRadius: '3px',
       marginLeft: '8px',
       textTransform: 'uppercase',
+      fontWeight: 600,
     }}>
-      ⚙️ CI/CD Active
+      ⚙️ CI/CD
     </span>
   );
 }
@@ -389,7 +498,7 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
       </div>
 
       {/* links */}
-      <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+      <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', flexWrap: 'wrap' }}>
         <a
           href={project.github}
           target="_blank"
@@ -418,6 +527,8 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
         </a>
         {project.id === 'moletom' && <RenderButton />}
         {project.id === 'radar' && deployButton('https://jangustavo.me/apis/promopulse/docs')}
+        {project.id === 'stockwise' && deployButton('https://jangustavo.me/apis/stockwise/scalar/v1')}
+        {project.id === 'stockwise' && <a href="https://jangustavo.me/stockwise" target="_blank" rel="noopener noreferrer" style={{ fontSize: '12px', color: 'purple', border: '1px solid purple', padding: '5px 16px', letterSpacing: '0.08em', display: 'inline-flex', alignItems: 'center', gap: '6px', transition: 'background 0.2s, color 0.2s' }} onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = 'purple'; (e.currentTarget as HTMLElement).style.color = '#0d0f0e' }} onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = 'transparent'; (e.currentTarget as HTMLElement).style.color = 'purple' }}>↗ CRUD in Action</a>}
         {project.id === 'radar' && downloadRelease('https://github.com/JanGustavo/telegram-PromoPulse-extension/releases/latest/download/PromoPulse-Extension.zip')}
         {project.live && (
           <a
@@ -434,9 +545,6 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
     </div>
   )
   
-
-  
-
 
 
 }
@@ -504,6 +612,75 @@ function SkillsSection() {
   )
 }
 
+function MusicPlayer() {
+  const { toggleMusic, isPlaying, bars } = useChiptune()
+
+  return (
+    <div style={{
+      position: 'fixed',
+      bottom: '2rem',
+      right: '2rem',
+      zIndex: 50,
+      display: 'flex',
+      alignItems: 'flex-end',
+      gap: '0.5rem',
+    }}>
+      {/* Equalizer */}
+      <div style={{
+        display: 'flex',
+        gap: '4px',
+        alignItems: 'flex-end',
+        height: '30px',
+      }}>
+        {bars.map((height, i) => (
+          <div
+            key={i}
+            style={{
+              width: '4px',
+              height: `${height}%`,
+              background: 'var(--green)',
+              borderRadius: '2px',
+              transition: 'height 0.1s ease',
+              boxShadow: isPlaying ? `0 0 8px var(--green)` : 'none',
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Botão */}
+      <button
+        onClick={toggleMusic}
+        style={{
+          width: '40px',
+          height: '40px',
+          borderRadius: '50%',
+          border: `2px solid var(--green)`,
+          background: isPlaying ? 'var(--green-dim)' : 'transparent',
+          color: 'var(--green)',
+          cursor: 'pointer',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          fontSize: '18px',
+          transition: 'all 0.2s ease',
+          boxShadow: isPlaying ? `0 0 12px var(--green)` : 'none',
+        }}
+        onMouseEnter={e => {
+          (e.currentTarget as HTMLElement).style.boxShadow = '0 0 12px var(--green)'
+          ;(e.currentTarget as HTMLElement).style.background = 'var(--green-dim)'
+        }}
+        onMouseLeave={e => {
+          (e.currentTarget as HTMLElement).style.boxShadow = isPlaying ? '0 0 12px var(--green)' : 'none'
+          ;(e.currentTarget as HTMLElement).style.background = isPlaying ? 'var(--green-dim)' : 'transparent'
+        }}
+        title="Toca uma música retro!"
+      >
+        {isPlaying ? '🎵' : '🎮'}
+      </button>
+    </div>
+  )
+}
+
 function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   useEffect(() => {
@@ -561,7 +738,7 @@ function Navbar() {
 export default function App() {
   const BOOT_LINES = [
     '> iniciando sistema...',
-    '> carregando módulos: [C#] [Python] [.NET] [Flask]',
+    '> carregando módulos: [C#] [Python] [.NET] [FastAPI]',
     '> conectando ao banco: PostgreSQL ✓',
     '> build: OK — nenhum erro encontrado',
     '> olá, mundo.',
@@ -572,6 +749,7 @@ export default function App() {
   return (
     <>
       <Navbar />
+      <MusicPlayer />
 
       {/* scanline overlay sutil */}
       <div style={{
@@ -647,9 +825,7 @@ export default function App() {
                 fontSize: '14px',
                 marginBottom: '2rem',
               }}>
-                Desenvolvedor Backend Júnior focado em ecossistemas .NET e Python. 
-        Especialista na construção de APIs robustas, sistemas de estoque com CI/CD 
-        e integrações com IA generativa. Baseado em Bayeux, PB.
+                Desenvolvedor Backend com foco em arquitetura robusta e escalabilidade. Especialista em ecossistemas .NET e Python, construindo APIs RESTful, sistemas de CI/CD, integrações com IA generativa e soluções fullstack. Baseado em Bayeux, PB.
               </p>
 
               <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
@@ -666,18 +842,20 @@ export default function App() {
                 >
                   ver projetos ↓
                 </a>
-                <a
-                  href="mailto:jeeh2200@gmail.com"
+                <CopyEmailLink
+                  email="jeeh2200@gmail.com"
+                  defaultText="falar comigo"
                   style={{
                     fontSize: '13px',
                     color: 'var(--green)',
                     border: '1px solid var(--green)',
                     padding: '8px 24px',
                     letterSpacing: '0.06em',
+                    display: 'inline-block',
+                    textAlign: 'center',
+                    minWidth: '140px',
                   }}
-                >
-                  falar comigo
-                </a>
+                />
               </div>
             </div>
           </section>
@@ -768,15 +946,21 @@ export default function App() {
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
               {[
-                { label: 'email', value: 'jeeh2200@gmail.com', href: 'mailto:jeeh2200@gmail.com' },
+                { label: 'email', value: 'jeeh2200@gmail.com', isEmail: true },
                 { label: 'github', value: 'github.com/JanGustavo', href: 'https://github.com/JanGustavo' },
-                { label: 'localização', value: 'Bayeux, Paraíba — Brasil', href: null },
-              ].map(({ label, value, href }) => (
+                { label: 'localização', value: 'Bayeux, Paraíba — Brasil' },
+              ].map(({ label, value, href, isEmail }) => (
                 <div key={label} style={{ display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '13px' }}>
                   <span style={{ color: 'var(--text-dim)', minWidth: '90px', fontSize: '11px', letterSpacing: '0.08em' }}>
                     {label}
                   </span>
-                  {href ? (
+                  {isEmail ? (
+                    <CopyEmailLink
+                      email={value}
+                      defaultText={value}
+                      style={{ color: 'var(--green)' }}
+                    />
+                  ) : href ? (
                     <a href={href} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--green)' }}>
                       {value}
                     </a>

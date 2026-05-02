@@ -5,7 +5,8 @@
   "homepage": "https://jangustavo.me",
   "dependencies": {
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "tw-animate-css": "^1.4.0"
   },
   "devDependencies": {
     "@types/react": "^18.3.1",
@@ -16,6 +17,7 @@
     "vite": "^6.0.5"
   },
   "scripts": {
+    "app": "vite",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
