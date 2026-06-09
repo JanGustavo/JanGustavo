@@ -16,6 +16,8 @@
   --green-dim: #1e4a30;
   --amber: #f5a623;
   --amber-dim: #3d2800;
+  --red: #ff4a4a;
+  --red-dim: #4a1e1e;
   --text: #c8d5c8;
   --text-dim: #5a6e5a;
   --text-bright: #e8f0e8;
@@ -133,5 +135,14 @@ a:hover {
   100% {
     clip-path: inset(58% 0 43% 0);
     transform: translate(1px, 0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
   }
 }

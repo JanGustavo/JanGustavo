@@ -15,10 +15,44 @@ interface Project {
   accentVar: string
   status: 'live' | 'wip' | 'mvp'
   hasCI: boolean
+  featured?: boolean
 }
 
 /* ─── dados ─── */
 const PROJECTS: Project[] = [
+  {
+    id: 'cronflow',
+    name: 'CronFlow',
+    tagline: 'Plataforma SaaS de agendamento de tarefas e webhooks em Go',
+    description:
+      'Plataforma completa de agendamento de requisições HTTP e webhooks (CronTab as a Service). Desenvolvida em Go com arquitetura distribuída de múltiplos binários: API RESTful Chi, Scheduler com distributed locking no Redis, e Workers assíncronos de alto rendimento com Asynq. O ecossistema é integrado a um painel SPA em React 19 + TypeScript + Tailwind CSS v4 com quadro Kanban interativo, telemetria de logs de execução e controle de limites por planos.',
+    highlight: 'Go (Chi) + Redis (Asynq) + PostgreSQL + React 19 + Tailwind v4 + Docker',
+    tech: ['Go', 'Redis', 'PostgreSQL', 'React 19', 'Tailwind CSS v4', 'TypeScript', 'Docker', 'Asynq'],
+    tags: ['SaaS', 'Backend', 'Fullstack', 'Micro-serviços', 'DevOps'],
+    github: 'https://github.com/JanGustavo/Cron',
+    live: 'https://cron.jangustavo.me',
+    color: '#00d9ff',
+    accentVar: 'cyan',
+    status: 'live',
+    hasCI: true,
+    featured: true,
+  },
+  {
+    id: 'metemacha',
+    name: 'MeteMacha',
+    tagline: 'Aplicativo mobile para registro de treinos com cronômetro inteligente e IA',
+    description:
+      'Aplicativo completo de treino (Gym Tracker) desenvolvido em Flutter com banco de dados local reativo SQLite (Drift) e gerência de estado avançada com Riverpod. Possui cronômetro inteligente de descanso persistente com notificações nativas em segundo plano, reprodutor de rádio integrado e funcionalidade assistida por IA (Groq/Llama3) para formatar e importar treinos em texto livre.',
+    highlight: 'Flutter + SQLite (Drift) + Riverpod + Groq/Llama3 AI + Background Notifications',
+    tech: ['Flutter', 'Dart', 'SQLite', 'Drift', 'Riverpod', 'Groq AI', 'Llama 3'],
+    tags: ['Mobile', 'Flutter', 'SQLite', 'IA Generativa', 'Android'],
+    github: 'https://github.com/JanGustavo/MeteMachaFit',
+    color: '#ff4a4a',
+    accentVar: 'red',
+    status: 'live',
+    hasCI: true,
+    featured: true,
+  },
   {
     id: 'stockwise',
     name: 'StockWise.NET',
@@ -64,8 +98,7 @@ const PROJECTS: Project[] = [
     status: 'mvp',
     hasCI: false,
   },
-
- {
+  {
     id: 'radar',
     name: 'Telegram Radar',
     tagline: 'Monitor de ofertas em tempo real com extensão de navegador',
@@ -83,10 +116,10 @@ const PROJECTS: Project[] = [
 ]
 
 const SKILLS = {
-  'Linguagens': ['C#', 'Python', 'TypeScript', 'JavaScript', 'Java', 'SQL'],
-  'Frameworks': ['ASP.NET', 'Entity Framework', 'Flask', 'FastAPI', 'Angular', 'Bootstrap'],
-  'Banco de dados': ['PostgreSQL', 'SQLite', 'SQL Server', 'Supabase'],
-  'Ferramentas & DevOps': ['Git', 'GitHub Actions', 'Docker', 'Swagger', 'VS Code'],
+  'Linguagens': ['Go', 'C#', 'Python', 'TypeScript', 'JavaScript', 'Java', 'SQL'],
+  'Frameworks': ['React', 'ASP.NET', 'Entity Framework', 'Flask', 'FastAPI', 'Angular', 'Tailwind CSS'],
+  'Banco de dados': ['PostgreSQL', 'Redis', 'SQLite', 'SQL Server', 'Supabase'],
+  'Ferramentas & DevOps': ['Git', 'GitHub Actions', 'Docker', 'Swagger', 'Asynq', 'VS Code'],
 }
 
 /* ─── hook: música retro ─── */
@@ -341,7 +374,7 @@ function RenderButton() {
   );
 }
 
-function deployButton(url: string) {
+function deployButton(url: string, color = 'red', label = 'Deploy →') {
   return (
     <a
       href={url}
@@ -349,8 +382,8 @@ function deployButton(url: string) {
       rel="noopener noreferrer"
       style={{
         fontSize: '12px',
-        color: 'red',
-        border: '1px solid red',
+        color: color,
+        border: `1px solid ${color}`,
         padding: '5px 16px',
         letterSpacing: '0.08em',
         display: 'inline-flex',
@@ -360,20 +393,20 @@ function deployButton(url: string) {
       }}
 
       onMouseEnter={e => {
-        (e.currentTarget as HTMLElement).style.background = 'red'
+        (e.currentTarget as HTMLElement).style.background = color
         ;(e.currentTarget as HTMLElement).style.color = '#0d0f0e'
       }}
       onMouseLeave={e => {
         (e.currentTarget as HTMLElement).style.background = 'transparent'
-        ;(e.currentTarget as HTMLElement).style.color = 'red'
+        ;(e.currentTarget as HTMLElement).style.color = color
       }}
     >
-      Deploy →
+      {label}
     </a>
   );
 }
 
-function downloadRelease(url: string) {
+function downloadRelease(url: string, color = '#00d9ff', label = 'Baixar Release ↓') {
   return (
     <a
       href={url}
@@ -381,8 +414,8 @@ function downloadRelease(url: string) {
       rel="noopener noreferrer"
       style={{
         fontSize: '12px',
-        color: 'blue',
-        border: '1px solid blue',
+        color: color,
+        border: `1px solid ${color}`,
         padding: '5px 16px',
         letterSpacing: '0.08em',
         display: 'inline-flex',
@@ -392,15 +425,15 @@ function downloadRelease(url: string) {
       }}
 
       onMouseEnter={e => {
-        (e.currentTarget as HTMLElement).style.background = 'blue'
-        ;(e.currentTarget as HTMLElement).style.color = '#ffffff'
+        (e.currentTarget as HTMLElement).style.background = color
+        ;(e.currentTarget as HTMLElement).style.color = '#0d0f0e'
       }}
       onMouseLeave={e => {
         (e.currentTarget as HTMLElement).style.background = 'transparent'
-        ;(e.currentTarget as HTMLElement).style.color = 'blue'
+        ;(e.currentTarget as HTMLElement).style.color = color
       }}
     >
-      Baixar Release ↓
+      {label}
     </a>
   );
 }
@@ -411,6 +444,7 @@ function downloadRelease(url: string) {
 function ProjectCard({ project, delay }: { project: Project; delay: number }) {
   const { ref, visible } = useVisible()
   const [hovered, setHovered] = useState(false)
+  const isFeatured = project.featured;
 
   return (
     <div
@@ -420,13 +454,22 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
       style={{
         opacity: visible ? 1 : 0,
         transform: visible ? 'translateY(0)' : 'translateY(30px)',
-        border: `1px solid ${hovered ? project.color + '55' : 'var(--border)'}`,
-        background: hovered ? 'var(--bg-hover)' : 'var(--bg-card)',
+        border: `1px solid ${hovered ? project.color + '55' : isFeatured ? project.color + '33' : 'var(--border)'}`,
+        background: hovered 
+          ? 'var(--bg-hover)' 
+          : isFeatured 
+            ? 'linear-gradient(135deg, var(--bg-card) 0%, rgba(0, 217, 255, 0.02) 100%)' 
+            : 'var(--bg-card)',
         padding: '2rem',
         position: 'relative',
         overflow: 'hidden',
         cursor: 'default',
-        transition: `opacity 0.6s ease ${delay}ms, transform 0.6s ease ${delay}ms, border-color 0.3s, background 0.3s`,
+        boxShadow: isFeatured && hovered 
+          ? `0 0 25px ${project.color}15` 
+          : isFeatured 
+            ? `0 0 15px ${project.color}05` 
+            : 'none',
+        transition: `opacity 0.6s ease ${delay}ms, transform 0.6s ease ${delay}ms, border-color 0.3s, background 0.3s, box-shadow 0.3s`,
       }}
     >
       {/* linha de cor lateral */}
@@ -443,7 +486,7 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1rem', flexWrap: 'wrap', gap: '0.5rem' }}>
         <div>
           <div style={{ color: 'var(--text-dim)', fontSize: '11px', marginBottom: '4px', letterSpacing: '0.1em' }}>
-            $ project --name
+            {isFeatured ? '$ project --featured' : '$ project --name'}
           </div>
           <h3 style={{
             fontFamily: 'var(--serif)',
@@ -458,7 +501,22 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
             {project.tagline}
           </p>
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+          {isFeatured && (
+            <span style={{
+              fontSize: '10px',
+              color: project.color,
+              border: `1px solid ${project.color}`,
+              padding: '2px 8px',
+              borderRadius: '3px',
+              textTransform: 'uppercase',
+              fontWeight: 800,
+              letterSpacing: '0.08em',
+              animation: 'pulse 2s infinite ease-in-out',
+            }}>
+              ★ DESTAQUE
+            </span>
+          )}
           <StatusBadge status={project.status} />
           <CIBadge active={project.hasCI} />
         </div>
@@ -525,12 +583,14 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
         >
           ↗ GitHub
         </a>
+        {project.id === 'cronflow' && deployButton('https://cron.jangustavo.me', project.color, '↗ Dashboard Ao Vivo')}
         {project.id === 'moletom' && <RenderButton />}
         {project.id === 'radar' && deployButton('https://jangustavo.me/apis/promopulse/docs')}
         {project.id === 'stockwise' && deployButton('https://jangustavo.me/apis/stockwise/scalar/v1')}
         {project.id === 'stockwise' && <a href="https://jangustavo.me/stockwise" target="_blank" rel="noopener noreferrer" style={{ fontSize: '12px', color: 'purple', border: '1px solid purple', padding: '5px 16px', letterSpacing: '0.08em', display: 'inline-flex', alignItems: 'center', gap: '6px', transition: 'background 0.2s, color 0.2s' }} onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = 'purple'; (e.currentTarget as HTMLElement).style.color = '#0d0f0e' }} onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = 'transparent'; (e.currentTarget as HTMLElement).style.color = 'purple' }}>↗ CRUD in Action</a>}
-        {project.id === 'radar' && downloadRelease('https://github.com/JanGustavo/telegram-PromoPulse-extension/releases/latest/download/PromoPulse-Extension.zip')}
-        {project.live && (
+        {project.id === 'radar' && downloadRelease('https://github.com/JanGustavo/telegram-PromoPulse-extension/releases/latest/download/PromoPulse-Extension.zip', project.color, 'Baixar Extensão (.zip) ↓')}
+        {project.id === 'metemacha' && downloadRelease('https://github.com/JanGustavo/MeteMachaFit/releases/latest/download/app-release.apk', project.color, 'Baixar APK (.apk) ↓')}
+        {project.live && project.id !== 'cronflow' && (
           <a
             href={project.live}
             target="_blank"
@@ -674,6 +734,7 @@ function MusicPlayer() {
           ;(e.currentTarget as HTMLElement).style.background = isPlaying ? 'var(--green-dim)' : 'transparent'
         }}
         title="Toca uma música retro!"
+        aria-label="Tocar música retrô"
       >
         {isPlaying ? '🎵' : '🎮'}
       </button>
@@ -738,8 +799,8 @@ function Navbar() {
 export default function App() {
   const BOOT_LINES = [
     '> iniciando sistema...',
-    '> carregando módulos: [C#] [Python] [.NET] [FastAPI]',
-    '> conectando ao banco: PostgreSQL ✓',
+    '> carregando módulos: [Go] [C#] [Python] [.NET] [FastAPI] [React]',
+    '> conectando ao banco: PostgreSQL + Redis ✓',
     '> build: OK — nenhum erro encontrado',
     '> olá, mundo.',
   ]
@@ -825,7 +886,7 @@ export default function App() {
                 fontSize: '14px',
                 marginBottom: '2rem',
               }}>
-                Desenvolvedor Backend com foco em arquitetura robusta e escalabilidade. Especialista em ecossistemas .NET e Python, construindo APIs RESTful, sistemas de CI/CD, integrações com IA generativa e soluções fullstack. Baseado em Bayeux, PB.
+                Desenvolvedor Backend com foco em arquitetura robusta e escalabilidade. Especialista em ecossistemas Go, .NET e Python, construindo APIs RESTful, sistemas de CI/CD, integrações com IA generativa e soluções fullstack. Baseado em Bayeux, PB.
               </p>
 
               <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
