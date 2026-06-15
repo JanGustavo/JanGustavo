@@ -38,15 +38,15 @@ const PROJECTS: Project[] = [
     featured: true,
   },
   {
-    id: 'metemacha',
-    name: 'MeteMacha',
-    tagline: 'Aplicativo mobile para registro de treinos com cronômetro inteligente e IA',
+    id: 'metemarcha',
+    name: 'Mete Marcha',
+    tagline: 'Gym Tracker mobile em Flutter com widgets interativos, serviço foreground e IA',
     description:
-      'Aplicativo completo de treino (Gym Tracker) desenvolvido em Flutter com banco de dados local reativo SQLite (Drift) e gerência de estado avançada com Riverpod. Possui cronômetro inteligente de descanso persistente com notificações nativas em segundo plano, reprodutor de rádio integrado e funcionalidade assistida por IA (Groq/Llama3) para formatar e importar treinos em texto livre.',
-    highlight: 'Flutter + SQLite (Drift) + Riverpod + Groq/Llama3 AI + Background Notifications',
-    tech: ['Flutter', 'Dart', 'SQLite', 'Drift', 'Riverpod', 'Groq AI', 'Llama 3'],
-    tags: ['Mobile', 'Flutter', 'SQLite', 'IA Generativa', 'Android'],
-    github: 'https://github.com/JanGustavo/MeteMachaFit',
+      'Aplicativo de registro e acompanhamento de treinos (Gym Tracker) em Flutter com banco de dados SQLite reativo (Drift) e gerenciamento de estado com Riverpod. Destaca-se pelas integrações nativas no Android: widgets de home screen interativos (Streak/Treino do dia) integrados via HomeWidget, serviço em primeiro plano (Foreground Service) persistente para cronometragem, e ações em segundo plano integradas diretamente nas notificações do sistema (+30s/Pular) via IsolateNameServer. Conta também com suporte a Deep Linking, player de música integrado e inteligência artificial (Groq/Llama3) para formatar e importar treinos em texto livre.',
+    highlight: 'Flutter + SQLite (Drift) + Widgets Nativos + Foreground Service + Groq AI + System Notifications',
+    tech: ['Flutter', 'Dart', 'SQLite', 'Drift', 'Riverpod', 'Android Widgets', 'Foreground Tasks', 'Groq AI'],
+    tags: ['Mobile', 'Flutter', 'SQLite', 'IA Generativa', 'Nativo Android'],
+    github: 'https://github.com/JanGustavo/MeteMarcha',
     color: '#ff4a4a',
     accentVar: 'red',
     status: 'live',
@@ -589,7 +589,7 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
         {project.id === 'stockwise' && deployButton('https://jangustavo.me/apis/stockwise/scalar/v1')}
         {project.id === 'stockwise' && <a href="https://jangustavo.me/stockwise" target="_blank" rel="noopener noreferrer" style={{ fontSize: '12px', color: 'purple', border: '1px solid purple', padding: '5px 16px', letterSpacing: '0.08em', display: 'inline-flex', alignItems: 'center', gap: '6px', transition: 'background 0.2s, color 0.2s' }} onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = 'purple'; (e.currentTarget as HTMLElement).style.color = '#0d0f0e' }} onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = 'transparent'; (e.currentTarget as HTMLElement).style.color = 'purple' }}>↗ CRUD in Action</a>}
         {project.id === 'radar' && downloadRelease('https://github.com/JanGustavo/telegram-PromoPulse-extension/releases/latest/download/PromoPulse-Extension.zip', project.color, 'Baixar Extensão (.zip) ↓')}
-        {project.id === 'metemacha' && downloadRelease('https://github.com/JanGustavo/MeteMachaFit/releases/latest/download/app-release.apk', project.color, 'Baixar APK (.apk) ↓')}
+        {project.id === 'metemarcha' && downloadRelease('https://github.com/JanGustavo/MeteMarcha/releases/latest/download/app-release.apk', project.color, 'Baixar APK (.apk) ↓')}
         {project.live && project.id !== 'cronflow' && (
           <a
             href={project.live}
