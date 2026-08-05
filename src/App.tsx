@@ -9,42 +9,14 @@ function ProjectAvatars({ projectId, color }: { projectId: string; color: string
       case 'cronflow':
         return [
               {
-                key: 'go',
-                bg: '#00ADD8',
+                key: 'cron-logo',
+                bg: '#111413',
                 element: (
-                  <svg viewBox="0 0 500 500" style={{ width: '13px', height: '13px' }}>
-                    <defs>
-                      <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#7B2CBF" />
-                        <stop offset="100%" stopColor="#3C096C" />
-                      </linearGradient>
-                      <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#5A189A" />
-                        <stop offset="100%" stopColor="#1A75FF" />
-                      </linearGradient>
-                      <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#0052CC" />
-                        <stop offset="100%" stopColor="#00A3FF" />
-                      </linearGradient>
-                      <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#00A3FF" />
-                        <stop offset="100%" stopColor="#00F5D4" />
-                      </linearGradient>
-                      <radialGradient id="glow" cx="50%" cy="50%" r="50%">
-                        <stop offset="0%" stopColor="#38B6FF" stopOpacity="1" />
-                        <stop offset="30%" stopColor="#00F5D4" stopOpacity="0.5" />
-                        <stop offset="100%" stopColor="#000000" stopOpacity="0" />
-                      </radialGradient>
-                    </defs>
-                    <g transform="translate(10, 0)">
-                      <path d="M 50,110 L 50,90 A 20,20 0 0 1 70,70 C 160,70 300,150 445,246 C 300,180 160,130 70,130 A 20,20 0 0 1 50,110 Z" fill="url(#grad1)" />
-                      <path d="M 50,205 L 50,185 A 20,20 0 0 1 70,165 C 160,165 300,210 445,248 C 300,225 160,225 70,225 A 20,20 0 0 1 50,205 Z" fill="url(#grad2)" />
-                      <path d="M 50,300 L 50,280 A 20,20 0 0 1 70,260 C 160,260 300,250 445,252 C 300,270 160,320 70,320 A 20,20 0 0 1 50,300 Z" fill="url(#grad3)" />
-                      <path d="M 50,395 L 50,375 A 20,20 0 0 1 70,355 C 160,355 300,290 445,254 C 300,340 160,415 70,415 A 20,20 0 0 1 50,395 Z" fill="url(#grad4)" />
-                      <circle cx="445" cy="250" r="25" fill="url(#glow)" style={{ mixBlendMode: 'screen' }} />
-                      <circle cx="445" cy="250" r="4" fill="#FFFFFF" />
-                    </g>
-                  </svg>
+                  <img 
+                    src="/logoCron.svg" 
+                    alt="Cron Logo" 
+                    style={{ width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover' }} 
+                  />
                 ),
                 title: 'Cron Logo'
               },
@@ -70,7 +42,7 @@ function ProjectAvatars({ projectId, color }: { projectId: string; color: string
               <img 
                 src="/metemacha_app_icon.png" 
                 alt="Mete Marcha Logo" 
-                style={{ width: '28px', height: '28px', borderRadius: '50%', objectFit: 'cover' }} 
+                style={{ width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover' }} 
               />
             ),
             title: 'Mete Marcha'
@@ -143,14 +115,16 @@ function ProjectAvatars({ projectId, color }: { projectId: string; color: string
       case 'moletom':
         return [
           {
-            key: 'python',
-            bg: '#1e1e24',
+            key: 'moletom-logo',
+            bg: '#111413',
             element: (
-              <svg viewBox="0 0 24 24" fill="currentColor" style={{ width: '13px', height: '13px' }}>
-                <path d="M11.89 2c-2.3 0-4.22.18-4.22.18s-2.02.26-2.02 2.05v2.3H9.7v.88H5.65c-1.8 0-2.05.9-2.05.9s-.28.84-.28 2.05c0 1.2.22 2.05.28 2.05s.38.86 2.05.86h1.22v-1.74c0-1.87 1.57-2.05 1.57-2.05h4.22s2.05-.1 2.05-2.05V6.26c0-1.95-1.9-2.05-1.9-2.05L11.89 2zm.23 1.3a.62.62 0 1 1 0 1.25.62.62 0 0 1 0-1.25zM12.1 22c2.3 0 4.22-.18 4.22-.18s2.02-.26 2.02-2.05v-2.3h-4.05v-.88h4.05c1.8 0 2.05-.9 2.05-.9s.28-.84.28-2.05c0-1.2-.22-2.05-.28-2.05s-.38-.86-2.05-.86h-1.22v1.74c0 1.87-1.57 2.05-1.57 2.05h-4.22s-2.05.1-2.05 2.05v2.22c0 1.95 1.9 2.05 1.9 2.05L12.1 22zm-.23-1.3a.62.62 0 1 1 0-1.25.62.62 0 0 1 0 1.25z" fill="#ffd43b"/>
-              </svg>
+              <img 
+                src="/logoMoletom.png" 
+                alt="MoleTom Store Logo" 
+                style={{ width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover' }} 
+              />
             ),
-            title: 'Python / Flask'
+            title: 'MoleTom Store'
           },
           {
             key: 'ai',
@@ -192,6 +166,33 @@ function ProjectAvatars({ projectId, color }: { projectId: string; color: string
             title: 'Extensão de Navegador'
           }
         ]
+      case 'worldcup':
+        return [
+          {
+            key: 'soccer',
+            bg: '#111413',
+            element: (
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ width: '13px', height: '13px', color: '#fff' }}>
+                <circle cx="12" cy="12" r="10" />
+                <path d="m12 2-2 3v4l4 2 2-3V2" />
+                <path d="M12 22v-3l2-2v-4l-4-2-2 3v6" />
+                <path d="m2 12 3-2h4l2 4-3 2H2" />
+                <path d="m22 12-3 2h-4l-2-4 3-2h6" />
+              </svg>
+            ),
+            title: 'Simulação Estatística'
+          },
+          {
+            key: 'python',
+            bg: '#1e1e24',
+            element: (
+              <svg viewBox="0 0 24 24" fill="currentColor" style={{ width: '13px', height: '13px' }}>
+                <path d="M11.89 2c-2.3 0-4.22.18-4.22.18s-2.02.26-2.02 2.05v2.3H9.7v.88H5.65c-1.8 0-2.05.9-2.05.9s-.28.84-.28 2.05c0 1.2.22 2.05.28 2.05s.38.86 2.05.86h1.22v-1.74c0-1.87 1.57-2.05 1.57-2.05h4.22s2.05-.1 2.05-2.05V6.26c0-1.95-1.9-2.05-1.9-2.05L11.89 2zm.23 1.3a.62.62 0 1 1 0 1.25.62.62 0 0 1 0-1.25zM12.1 22c2.3 0 4.22-.18 4.22-.18s2.02-.26 2.02-2.05v-2.3h-4.05v-.88h4.05c1.8 0 2.05-.9 2.05-.9s.28-.84.28-2.05c0-1.2-.22-2.05-.28-2.05s-.38-.86-2.05-.86h-1.22v1.74c0 1.87-1.57 2.05-1.57 2.05h-4.22s-2.05.1-2.05 2.05v2.22c0 1.95 1.9 2.05 1.9 2.05L12.1 22zm-.23-1.3a.62.62 0 1 1 0-1.25.62.62 0 0 1 0 1.25z" fill="#ffd43b"/>
+              </svg>
+            ),
+            title: 'Python / Streamlit'
+          }
+        ]
       default:
         return []
     }
@@ -222,6 +223,7 @@ function ProjectAvatars({ projectId, color }: { projectId: string; color: string
             alignItems: 'center',
             justifyContent: 'center',
             border: `2px solid var(--bg-card)`,
+            overflow: 'hidden',
             marginLeft: index > 0 ? '-12px' : '0',
             boxShadow: '0 4px 10px rgba(0,0,0,0.4)',
             zIndex: 10 - index,
@@ -333,9 +335,18 @@ const PROJECTS: Project[] = [
     name: 'MoleTom Store',
     tagline: 'E-commerce print-on-demand com IA generativa e PIX nativo',
     description:
-      'Plataforma de e-commerce inovadora onde usuários criam estampas personalizadas via IA generativa. O sistema integra geração de imagens (Pollinations.ai), composição de mockups com Pillow, pagamentos PIX com geração dinâmica de BR Code/EMV + CRC-16, autenticação completa e galeria comunitária com votação. Deploy em Render com PostgreSQL via Supabase.',
-    highlight: 'IA Generativa (Pollinations.ai) + PIX Real (BR Code/EMV) + Pillow Compositing',
-    tech: ['Python', 'Flask', 'SQLAlchemy', 'Pillow', 'PIX/EMV', 'Pollinations.ai'],
+      'Plataforma de e-commerce de vestuário onde usuários criam estampas exclusivas via IA generativa. O sistema conta com arquitetura de templates modularizados em Jinja2 (reduzindo redundância em 70%), persistência de estado para retomada de fluxo de compra pós-login, e pipeline resiliente de geração de imagem (com retentativas de IA e fallback local). Banco de dados tolerante a falhas de conexão externa com desvio automático (PostgreSQL / SQLite). Pagamentos PIX nativos gerados via BR Code/EMV dinâmico com validador CRC-16.',
+    highlight: 'IA Resiliente (Flux/Turbo Failover) + Auto-resume UX + Banco Self-Healing + PIX Emissor Nativo',
+    tech: [
+      'Python',
+      'Flask',
+      'SQLAlchemy',
+      'Pillow',
+      'PIX/EMV',
+      'Pollinations.ai',
+      'SQLite / PostgreSQL',
+      'Jinja2'
+    ],
     tags: ['E-commerce', 'IA Generativa', 'Pagamento', 'Python'],
     github: 'https://github.com/JanGustavo/MoleTom-store',
     color: '#f5a623',
@@ -356,6 +367,22 @@ const PROJECTS: Project[] = [
     color: '#f5a623',
     accentVar: 'amber',
     status: 'wip',
+    hasCI: false,
+  },
+  {
+    id: 'worldcup',
+    name: 'World Cup Simulator',
+    tagline: 'Simulador estatístico da Copa do Mundo FIFA 2026 com Monte Carlo e Streamlit',
+    description:
+      'Plataforma estatística para previsão de cenários e probabilidades de classificação na Copa do Mundo de 48 seleções. Utiliza simulações de Monte Carlo executando 1 milhão de iterações com geração de gols via Distribuição de Poisson (ponderada exponencialmente pela diferença de Rating FIFA). O algoritmo gerencia de forma otimizada os critérios de desempate e a complexa repescagem dos terceiros colocados. Interface interativa construída em Streamlit para visualização dinâmica de probabilidades em tempo real.',
+    highlight: 'Monte Carlo Simulations + Poisson Distribution + Vectorized Engine + Streamlit UI',
+    tech: ['Python', 'Streamlit', 'NumPy', 'Pandas', 'Matplotlib'],
+    tags: ['Data Science', 'Estatística', 'Python', 'Web App'],
+    github: 'https://github.com/JanGustavo/world-cup-simulator',
+    live: 'https://world-cup-simulator-python.streamlit.app/',
+    color: '#4afa8a',
+    accentVar: 'green',
+    status: 'live',
     hasCI: false,
   }
 ]
@@ -619,6 +646,41 @@ function RenderButton() {
   );
 }
 
+function matchTech(techArray: string[], search: string): boolean {
+  const s = search.toLowerCase();
+  return techArray.some(t => {
+    const tech = t.toLowerCase();
+    
+    // Custom database mapping for SQL
+    if (s === 'sql') {
+      return tech.includes('sql');
+    }
+    
+    // Custom mapping for ASP.NET / .NET
+    if (s === 'asp.net') {
+      return tech.includes('asp.net') || tech.includes('.net');
+    }
+    
+    // Custom mapping for Entity Framework / EF Core
+    if (s === 'entity framework') {
+      return tech.includes('entity framework') || tech.includes('ef core');
+    }
+    
+    // Custom mapping for Tailwind CSS
+    if (s === 'tailwind css') {
+      return tech.includes('tailwind');
+    }
+    
+    // Custom mapping for React
+    if (s === 'react') {
+      return tech.includes('react');
+    }
+    
+    // Default fallback: exact match or search string contained within the tech item
+    return tech === s || tech.includes(s);
+  });
+}
+
 function deployButton(url: string, color = 'red', label = 'Deploy →') {
   return (
     <a
@@ -686,10 +748,13 @@ function downloadRelease(url: string, color = '#00d9ff', label = 'Baixar Release
 
 
 
-function ProjectCard({ project, delay, index }: { project: Project; delay: number; index: number }) {
+function ProjectCard({ project, delay, index, selectedSkill }: { project: Project; delay: number; index: number; selectedSkill: string | null }) {
   const { ref, visible } = useVisible()
   const [hovered, setHovered] = useState(false)
   const isFeatured = project.featured;
+
+  const isActiveFilter = selectedSkill !== null;
+  const isMatching = selectedSkill ? matchTech(project.tech, selectedSkill) : false;
 
   // Comandos de terminal customizados para destacar a individualidade de cada projeto
   const commandMap: Record<string, string> = {
@@ -699,6 +764,7 @@ function ProjectCard({ project, delay, index }: { project: Project; delay: numbe
     adotapet: 'dotnet run --project AdotaPet.Api',
     moletom: 'python app.py',
     radar: 'uvicorn main:app --reload',
+    worldcup: 'streamlit run world_cup_simulator/main.py',
   }
   const projectCmd = commandMap[project.id] || (isFeatured ? 'project --featured' : 'project --name')
   const terminalCommand = `$ projects[${index}].run() // ${projectCmd}`
@@ -709,26 +775,37 @@ function ProjectCard({ project, delay, index }: { project: Project; delay: numbe
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
-        opacity: visible ? 1 : 0,
+        opacity: visible 
+          ? (isActiveFilter ? (isMatching ? 1 : 0.2) : 1) 
+          : 0,
         transform: visible ? 'translateY(0)' : 'translateY(30px)',
-        border: `1px solid ${hovered ? project.color + 'aa' : isFeatured ? project.color + '33' : 'var(--border)'}`,
-        background: hovered 
+        border: `1px solid ${
+          isActiveFilter && isMatching 
+            ? project.color 
+            : (hovered ? project.color + 'aa' : isFeatured ? project.color + '33' : 'var(--border)')
+        }`,
+        background: isActiveFilter && isMatching
           ? `radial-gradient(circle at top right, ${project.color}15 0%, var(--bg-hover) 85%)` 
-          : isFeatured 
-            ? 'linear-gradient(135deg, var(--bg-card) 0%, rgba(0, 217, 255, 0.02) 100%)' 
-            : 'var(--bg-card)',
+          : (hovered 
+            ? `radial-gradient(circle at top right, ${project.color}15 0%, var(--bg-hover) 85%)` 
+            : isFeatured 
+              ? 'linear-gradient(135deg, var(--bg-card) 0%, rgba(0, 217, 255, 0.02) 100%)' 
+              : 'var(--bg-card)'),
         padding: '2rem',
         position: 'relative',
         overflow: 'hidden',
         cursor: 'default',
-        boxShadow: isFeatured && hovered 
-          ? `0 10px 30px ${project.color}25, inset 0 0 12px ${project.color}08` 
-          : hovered
-            ? `0 8px 24px ${project.color}15, inset 0 0 8px ${project.color}05`
-            : isFeatured 
-              ? `0 4px 15px ${project.color}05` 
-              : 'none',
-        transition: `opacity 0.6s ease ${delay}ms, transform 0.6s ease ${delay}ms, border-color 0.3s, background 0.3s, box-shadow 0.3s`,
+        boxShadow: isActiveFilter && isMatching
+          ? `0 12px 36px ${project.color}44, inset 0 0 15px ${project.color}15`
+          : (isFeatured && hovered 
+            ? `0 10px 30px ${project.color}25, inset 0 0 12px ${project.color}08` 
+            : hovered
+              ? `0 8px 24px ${project.color}15, inset 0 0 8px ${project.color}05`
+              : isFeatured 
+                ? `0 4px 15px ${project.color}05` 
+                : 'none'),
+        filter: isActiveFilter && !isMatching ? 'grayscale(0.6) blur(0.3px)' : 'none',
+        transition: `opacity 0.6s ease ${delay}ms, transform 0.6s ease ${delay}ms, border-color 0.3s, background 0.3s, box-shadow 0.3s, filter 0.3s`,
       }}
     >
       {/* linha de cor lateral */}
@@ -807,19 +884,30 @@ function ProjectCard({ project, delay, index }: { project: Project; delay: numbe
 
       {/* tech stack */}
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '1.5rem' }}>
-        {project.tech.map(t => (
-          <span key={t} style={{
-            fontSize: '11px',
-            padding: '2px 10px',
-            border: hovered ? `1px solid ${project.color}44` : '1px solid var(--border-lit)',
-            color: hovered ? 'var(--text-bright)' : 'var(--text-dim)',
-            background: hovered ? `${project.color}08` : 'transparent',
-            letterSpacing: '0.05em',
-            transition: 'all 0.3s ease',
-          }}>
-            {t}
-          </span>
-        ))}
+        {project.tech.map(t => {
+          const isThisTechSelected = selectedSkill ? matchTech([t], selectedSkill) : false;
+          return (
+            <span key={t} style={{
+              fontSize: '11px',
+              padding: '2px 10px',
+              border: isThisTechSelected 
+                ? `1px solid ${project.color}` 
+                : (hovered ? `1px solid ${project.color}44` : '1px solid var(--border-lit)'),
+              color: isThisTechSelected 
+                ? 'var(--text-bright)' 
+                : (hovered ? 'var(--text-bright)' : 'var(--text-dim)'),
+              background: isThisTechSelected 
+                ? `${project.color}33` 
+                : (hovered ? `${project.color}08` : 'transparent'),
+              boxShadow: isThisTechSelected ? `0 0 8px ${project.color}66` : 'none',
+              fontWeight: isThisTechSelected ? 'bold' : 'normal',
+              letterSpacing: '0.05em',
+              transition: 'all 0.3s ease',
+            }}>
+              {t}
+            </span>
+          );
+        })}
       </div>
 
       {/* links */}
@@ -857,16 +945,7 @@ function ProjectCard({ project, delay, index }: { project: Project; delay: numbe
         {project.id === 'stockwise' && <a href="https://jangustavo.me/stockwise" target="_blank" rel="noopener noreferrer" style={{ fontSize: '12px', color: 'purple', border: '1px solid purple', padding: '5px 16px', letterSpacing: '0.08em', display: 'inline-flex', alignItems: 'center', gap: '6px', transition: 'background 0.2s, color 0.2s' }} onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = 'purple'; (e.currentTarget as HTMLElement).style.color = '#0d0f0e' }} onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = 'transparent'; (e.currentTarget as HTMLElement).style.color = 'purple' }}>↗ CRUD in Action</a>}
         {project.id === 'radar' && downloadRelease('https://github.com/JanGustavo/telegram-PromoPulse-extension/releases/latest/download/PromoPulse-Extension.zip', project.color, 'Baixar Extensão (.zip) ↓')}
         {project.id === 'metemarcha' && downloadRelease('https://github.com/JanGustavo/MeteMarcha/releases/latest/download/app-release.apk', project.color, 'Baixar APK (.apk) ↓')}
-        {project.live && project.id !== 'cronflow' && (
-          <a
-            href={project.live}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ fontSize: '12px', color: 'var(--text-dim)' }}
-          >
-            ver ao vivo →
-          </a>
-        )}
+        {project.live && project.id !== 'cronflow' && deployButton(project.live, project.color, 'ver ao vivo →')}
       </div>
 
     </div>
@@ -876,7 +955,7 @@ function ProjectCard({ project, delay, index }: { project: Project; delay: numbe
 
 }
 
-function SkillsSection() {
+function SkillsSection({ selectedSkill, setSelectedSkill }: { selectedSkill: string | null; setSelectedSkill: (skill: string | null) => void }) {
   const { ref, visible } = useVisible()
   return (
     <section ref={ref} style={{ padding: 'clamp(3rem, 8vw, 5rem) 0' }}>
@@ -898,42 +977,85 @@ function SkillsSection() {
         gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
         gap: '1.5rem',
       }}>
-        {Object.entries(SKILLS).map(([category, items], ci) => (
-          <div
-            key={category}
-            style={{
-              opacity: visible ? 1 : 0,
-              transform: visible ? 'translateY(0)' : 'translateY(20px)',
-              transition: `opacity 0.5s ease ${ci * 100}ms, transform 0.5s ease ${ci * 100}ms`,
-            }}
-          >
-            <div style={{
-              fontSize: '11px',
-              color: 'var(--green)',
-              letterSpacing: '0.12em',
-              textTransform: 'uppercase',
-              marginBottom: '0.8rem',
-              borderBottom: '1px solid var(--green-dim)',
-              paddingBottom: '0.4rem',
-            }}>
-              {category}
+        {Object.entries(SKILLS).map(([category, items], ci) => {
+          return (
+            <div
+              key={category}
+              style={{
+                opacity: visible ? 1 : 0,
+                transform: visible ? 'translateY(0)' : 'translateY(20px)',
+                transition: `opacity 0.5s ease ${ci * 100}ms, transform 0.5s ease ${ci * 100}ms`,
+              }}
+            >
+              <div style={{
+                fontSize: '11px',
+                color: 'var(--green)',
+                letterSpacing: '0.12em',
+                textTransform: 'uppercase',
+                marginBottom: '0.8rem',
+                borderBottom: '1px solid var(--green-dim)',
+                paddingBottom: '0.4rem',
+              }}>
+                {category}
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                {items.map(item => {
+                  const isSelected = selectedSkill === item;
+                  return (
+                    <span 
+                      key={item} 
+                      onClick={() => {
+                        if (isSelected) {
+                          setSelectedSkill(null);
+                        } else {
+                          setSelectedSkill(item);
+                          const el = document.getElementById('projetos');
+                          if (el) el.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }}
+                      style={{
+                        fontSize: '13px',
+                        color: isSelected ? 'var(--green)' : 'var(--text)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '8px',
+                        cursor: 'pointer',
+                        padding: '4px 8px',
+                        marginLeft: '-8px',
+                        borderRadius: '4px',
+                        background: isSelected ? 'rgba(0, 245, 212, 0.08)' : 'transparent',
+                        border: isSelected ? '1px solid rgba(0, 245, 212, 0.3)' : '1px solid transparent',
+                        transition: 'all 0.2s ease',
+                        fontWeight: isSelected ? 'bold' : 'normal',
+                        boxShadow: isSelected ? '0 0 10px rgba(0, 245, 212, 0.15)' : 'none',
+                      }}
+                      onMouseEnter={e => {
+                        if (!isSelected) {
+                          e.currentTarget.style.color = 'var(--green)';
+                          e.currentTarget.style.transform = 'translateX(4px)';
+                        }
+                      }}
+                      onMouseLeave={e => {
+                        if (!isSelected) {
+                          e.currentTarget.style.color = 'var(--text)';
+                          e.currentTarget.style.transform = 'none';
+                        }
+                      }}
+                    >
+                      <span style={{ 
+                        color: isSelected ? 'var(--green)' : 'var(--text-dim)',
+                        transition: 'color 0.2s'
+                      }}>
+                        {isSelected ? '●' : '▸'}
+                      </span>
+                      {item}
+                    </span>
+                  );
+                })}
+              </div>
             </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-              {items.map(item => (
-                <span key={item} style={{
-                  fontSize: '13px',
-                  color: 'var(--text)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                }}>
-                  <span style={{ color: 'var(--text-dim)' }}>▸</span>
-                  {item}
-                </span>
-              ))}
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   )
@@ -1073,6 +1195,7 @@ export default function App() {
   ]
 
   const { displayed, done } = useTypewriter(BOOT_LINES, 38)
+  const [selectedSkill, setSelectedSkill] = useState<string | null>(null)
 
   return (
     <>
@@ -1253,26 +1376,61 @@ export default function App() {
             <div style={{ color: 'var(--text-dim)', fontSize: '12px', marginBottom: '0.4rem' }}>
               $ git log --oneline --all
             </div>
-            <h2 style={{
-              fontFamily: 'var(--serif)',
-              fontSize: 'clamp(1.8rem, 4vw, 2.5rem)',
-              color: 'var(--text-bright)',
-              fontWeight: 700,
-              marginBottom: '2.5rem',
-            }}>
-              Projetos
-            </h2>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '2.5rem', flexWrap: 'wrap', gap: '1rem' }}>
+              <h2 style={{
+                fontFamily: 'var(--serif)',
+                fontSize: 'clamp(1.8rem, 4vw, 2.5rem)',
+                color: 'var(--text-bright)',
+                fontWeight: 700,
+                margin: 0,
+              }}>
+                Projetos
+              </h2>
+              {selectedSkill && (
+                <button
+                  onClick={() => setSelectedSkill(null)}
+                  style={{
+                    background: 'rgba(255, 255, 255, 0.05)',
+                    border: '1px solid var(--border)',
+                    color: 'var(--text-dim)',
+                    padding: '4px 12px',
+                    fontSize: '11px',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    transition: 'all 0.2s',
+                  }}
+                  onMouseEnter={e => {
+                    e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
+                    e.currentTarget.style.color = 'var(--text-bright)';
+                  }}
+                  onMouseLeave={e => {
+                    e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
+                    e.currentTarget.style.color = 'var(--text-dim)';
+                  }}
+                >
+                  Filtrado por: <strong style={{ color: 'var(--green)' }}>{selectedSkill}</strong> ✕
+                </button>
+              )}
+            </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
               {PROJECTS.map((project, i) => (
-                <ProjectCard key={project.id} project={project} delay={i * 120} index={i} />
+                <ProjectCard 
+                  key={project.id} 
+                  project={project} 
+                  delay={i * 120} 
+                  index={i} 
+                  selectedSkill={selectedSkill}
+                />
               ))}
             </div>
           </section>
 
           {/* ── SKILLS ── */}
           <section id="skills">
-            <SkillsSection />
+            <SkillsSection selectedSkill={selectedSkill} setSelectedSkill={setSelectedSkill} />
           </section>
 
           {/* ── FORMAÇÃO ── */}
