@@ -1,5 +1,250 @@
 import React, { useEffect, useRef, useState } from 'react'
 
+const RESUME_URL = 'https://drive.google.com/file/d/12wqMWjRZH9ga4APb3r7pRg4s7kitIsMh/view?usp=sharing'
+
+function ProjectAvatars({ projectId, color }: { projectId: string; color: string }) {
+  // Retorna os ícones correspondentes de acordo com o projeto
+  const getAvatars = () => {
+    switch (projectId) {
+      case 'cronflow':
+        return [
+              {
+                key: 'go',
+                bg: '#00ADD8',
+                element: (
+                  <svg viewBox="0 0 500 500" style={{ width: '13px', height: '13px' }}>
+                    <defs>
+                      <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#7B2CBF" />
+                        <stop offset="100%" stopColor="#3C096C" />
+                      </linearGradient>
+                      <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#5A189A" />
+                        <stop offset="100%" stopColor="#1A75FF" />
+                      </linearGradient>
+                      <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#0052CC" />
+                        <stop offset="100%" stopColor="#00A3FF" />
+                      </linearGradient>
+                      <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#00A3FF" />
+                        <stop offset="100%" stopColor="#00F5D4" />
+                      </linearGradient>
+                      <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stopColor="#38B6FF" stopOpacity="1" />
+                        <stop offset="30%" stopColor="#00F5D4" stopOpacity="0.5" />
+                        <stop offset="100%" stopColor="#000000" stopOpacity="0" />
+                      </radialGradient>
+                    </defs>
+                    <g transform="translate(10, 0)">
+                      <path d="M 50,110 L 50,90 A 20,20 0 0 1 70,70 C 160,70 300,150 445,246 C 300,180 160,130 70,130 A 20,20 0 0 1 50,110 Z" fill="url(#grad1)" />
+                      <path d="M 50,205 L 50,185 A 20,20 0 0 1 70,165 C 160,165 300,210 445,248 C 300,225 160,225 70,225 A 20,20 0 0 1 50,205 Z" fill="url(#grad2)" />
+                      <path d="M 50,300 L 50,280 A 20,20 0 0 1 70,260 C 160,260 300,250 445,252 C 300,270 160,320 70,320 A 20,20 0 0 1 50,300 Z" fill="url(#grad3)" />
+                      <path d="M 50,395 L 50,375 A 20,20 0 0 1 70,355 C 160,355 300,290 445,254 C 300,340 160,415 70,415 A 20,20 0 0 1 50,395 Z" fill="url(#grad4)" />
+                      <circle cx="445" cy="250" r="25" fill="url(#glow)" style={{ mixBlendMode: 'screen' }} />
+                      <circle cx="445" cy="250" r="4" fill="#FFFFFF" />
+                    </g>
+                  </svg>
+                ),
+                title: 'Cron Logo'
+              },
+          {
+            key: 'redis',
+            bg: '#D82C20',
+            element: (
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.0" strokeLinecap="round" strokeLinejoin="round" style={{ width: '13px', height: '13px', color: '#fff' }}>
+                <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                <polyline points="2 17 12 22 22 17" />
+                <polyline points="2 12 17 22 17" />
+              </svg>
+            ),
+            title: 'Redis'
+          }
+        ]
+      case 'metemarcha':
+        return [
+          {
+            key: 'metemarcha-logo',
+            bg: '#111413',
+            element: (
+              <img 
+                src="/metemacha_app_icon.png" 
+                alt="Mete Marcha Logo" 
+                style={{ width: '28px', height: '28px', borderRadius: '50%', objectFit: 'cover' }} 
+              />
+            ),
+            title: 'Mete Marcha'
+          },
+          {
+            key: 'android',
+            bg: '#3DDC84',
+            element: (
+              <svg viewBox="0 0 24 24" fill="#0c0f0d" style={{ width: '14px', height: '14px' }}>
+                <path d="M6 18c0 .55.45 1 1 1h1v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h2v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h1c.55 0 1-.45 1-1V8H6v10zM3.5 8C2.67 8 2 8.67 2 9.5v7c0 .83.67 1.5 1.5 1.5S5 17.33 5 16.5v-7C5 8.67 4.33 8 3.5 8zm17 0c-.83 0-1.5.67-1.5 1.5v7c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-7c0-.83-.67-1.5-1.5-1.5zm-8.5-5.5C8.38 2.5 6 4.88 6 7.85h12c0-2.97-2.38-5.35-6-5.35zm3.25 3.5a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5zm-6.5 0a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5z" />
+              </svg>
+            ),
+            title: 'Android Nativo'
+          }
+        ]
+      case 'stockwise':
+        return [
+          {
+            key: 'csharp',
+            bg: '#512BD4',
+            element: (
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ width: '13px', height: '13px', color: '#fff' }}>
+                <polyline points="16 18 22 12 16 6" />
+                <polyline points="8 6 2 12 8 18" />
+              </svg>
+            ),
+            title: 'C# / .NET'
+          },
+          {
+            key: 'db',
+            bg: '#336791',
+            element: (
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.0" strokeLinecap="round" strokeLinejoin="round" style={{ width: '13px', height: '13px', color: '#fff' }}>
+                <ellipse cx="12" cy="5" rx="9" ry="3" />
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+                <path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3" />
+              </svg>
+            ),
+            title: 'PostgreSQL'
+          }
+        ]
+      case 'adotapet':
+        return [
+          {
+            key: 'csharp',
+            bg: '#512BD4',
+            element: (
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ width: '13px', height: '13px', color: '#fff' }}>
+                <polyline points="16 18 22 12 16 6" />
+                <polyline points="8 6 2 12 8 18" />
+              </svg>
+            ),
+            title: 'C# / .NET'
+          },
+          {
+            key: 'pet',
+            bg: '#4afa8a',
+            element: (
+              <svg viewBox="0 0 24 24" fill="currentColor" style={{ width: '13px', height: '13px', color: '#0d0f0e' }}>
+                <circle cx="12" cy="14" r="4" />
+                <circle cx="6.5" cy="8.5" r="2" />
+                <circle cx="10.5" cy="5.5" r="2" />
+                <circle cx="15.5" cy="6.5" r="2" />
+                <circle cx="18.5" cy="10.5" r="2" />
+              </svg>
+            ),
+            title: 'Adoção de Pets'
+          }
+        ]
+      case 'moletom':
+        return [
+          {
+            key: 'python',
+            bg: '#1e1e24',
+            element: (
+              <svg viewBox="0 0 24 24" fill="currentColor" style={{ width: '13px', height: '13px' }}>
+                <path d="M11.89 2c-2.3 0-4.22.18-4.22.18s-2.02.26-2.02 2.05v2.3H9.7v.88H5.65c-1.8 0-2.05.9-2.05.9s-.28.84-.28 2.05c0 1.2.22 2.05.28 2.05s.38.86 2.05.86h1.22v-1.74c0-1.87 1.57-2.05 1.57-2.05h4.22s2.05-.1 2.05-2.05V6.26c0-1.95-1.9-2.05-1.9-2.05L11.89 2zm.23 1.3a.62.62 0 1 1 0 1.25.62.62 0 0 1 0-1.25zM12.1 22c2.3 0 4.22-.18 4.22-.18s2.02-.26 2.02-2.05v-2.3h-4.05v-.88h4.05c1.8 0 2.05-.9 2.05-.9s.28-.84.28-2.05c0-1.2-.22-2.05-.28-2.05s-.38-.86-2.05-.86h-1.22v1.74c0 1.87-1.57 2.05-1.57 2.05h-4.22s-2.05.1-2.05 2.05v2.22c0 1.95 1.9 2.05 1.9 2.05L12.1 22zm-.23-1.3a.62.62 0 1 1 0-1.25.62.62 0 0 1 0 1.25z" fill="#ffd43b"/>
+              </svg>
+            ),
+            title: 'Python / Flask'
+          },
+          {
+            key: 'ai',
+            bg: '#f5a623',
+            element: (
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ width: '13px', height: '13px', color: '#0d0f0e' }}>
+                <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.3-6.3l-.7.7M6.7 17.3l-.7.7m12.6 0l-.7-.7M6.7 6.7l-.7-.7" />
+                <circle cx="12" cy="12" r="4" />
+              </svg>
+            ),
+            title: 'IA Generativa'
+          }
+        ]
+      case 'radar':
+        return [
+          {
+            key: 'telegram',
+            bg: '#229ED9',
+            element: (
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.0" strokeLinecap="round" strokeLinejoin="round" style={{ width: '13px', height: '13px', color: '#fff' }}>
+                <line x1="22" y1="2" x2="11" y2="13" />
+                <polygon points="22 2 15 22 11 13 2 9 22 2" />
+              </svg>
+            ),
+            title: 'Telegram API'
+          },
+          {
+            key: 'chrome',
+            bg: '#4285F4',
+            element: (
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.0" strokeLinecap="round" strokeLinejoin="round" style={{ width: '13px', height: '13px', color: '#fff' }}>
+                <circle cx="12" cy="12" r="10" />
+                <circle cx="12" cy="12" r="4" />
+                <line x1="12" y1="8" x2="12" y2="2" />
+                <line x1="8.6" y1="14" x2="3.4" y2="11" />
+                <line x1="15.4" y1="14" x2="20.6" y2="11" />
+              </svg>
+            ),
+            title: 'Extensão de Navegador'
+          }
+        ]
+      default:
+        return []
+    }
+  }
+
+  const avatars = getAvatars()
+
+  if (avatars.length === 0) return null
+
+  return (
+    <div style={{
+      display: 'flex',
+      alignItems: 'center',
+      position: 'relative',
+      marginRight: '8px',
+      marginTop: '2px',
+    }}>
+      {avatars.map((av, index) => (
+        <div
+          key={av.key}
+          title={av.title}
+          style={{
+            width: '32px',
+            height: '32px',
+            borderRadius: '50%',
+            background: av.bg,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            border: `2px solid var(--bg-card)`,
+            marginLeft: index > 0 ? '-12px' : '0',
+            boxShadow: '0 4px 10px rgba(0,0,0,0.4)',
+            zIndex: 10 - index,
+            transition: 'transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s ease, box-shadow 0.2s ease',
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = 'translateY(-4px) scale(1.15)'
+            e.currentTarget.style.borderColor = color
+            e.currentTarget.style.boxShadow = `0 6px 14px ${color}44`
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = 'translateY(0) scale(1)'
+            e.currentTarget.style.borderColor = 'var(--bg-card)'
+            e.currentTarget.style.boxShadow = '0 4px 10px rgba(0,0,0,0.4)'
+          }}
+        >
+          {av.element}
+        </div>
+      ))}
+    </div>
+  )
+}
+
 /* ─── tipos ─── */
 interface Project {
   id: string
@@ -441,10 +686,22 @@ function downloadRelease(url: string, color = '#00d9ff', label = 'Baixar Release
 
 
 
-function ProjectCard({ project, delay }: { project: Project; delay: number }) {
+function ProjectCard({ project, delay, index }: { project: Project; delay: number; index: number }) {
   const { ref, visible } = useVisible()
   const [hovered, setHovered] = useState(false)
   const isFeatured = project.featured;
+
+  // Comandos de terminal customizados para destacar a individualidade de cada projeto
+  const commandMap: Record<string, string> = {
+    cronflow: 'go run cmd/scheduler/main.go',
+    metemarcha: 'flutter run --release',
+    stockwise: 'dotnet run --project StockWise.NET',
+    adotapet: 'dotnet run --project AdotaPet.Api',
+    moletom: 'python app.py',
+    radar: 'uvicorn main:app --reload',
+  }
+  const projectCmd = commandMap[project.id] || (isFeatured ? 'project --featured' : 'project --name')
+  const terminalCommand = `$ projects[${index}].run() // ${projectCmd}`
 
   return (
     <div
@@ -454,9 +711,9 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
       style={{
         opacity: visible ? 1 : 0,
         transform: visible ? 'translateY(0)' : 'translateY(30px)',
-        border: `1px solid ${hovered ? project.color + '55' : isFeatured ? project.color + '33' : 'var(--border)'}`,
+        border: `1px solid ${hovered ? project.color + 'aa' : isFeatured ? project.color + '33' : 'var(--border)'}`,
         background: hovered 
-          ? 'var(--bg-hover)' 
+          ? `radial-gradient(circle at top right, ${project.color}15 0%, var(--bg-hover) 85%)` 
           : isFeatured 
             ? 'linear-gradient(135deg, var(--bg-card) 0%, rgba(0, 217, 255, 0.02) 100%)' 
             : 'var(--bg-card)',
@@ -465,10 +722,12 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
         overflow: 'hidden',
         cursor: 'default',
         boxShadow: isFeatured && hovered 
-          ? `0 0 25px ${project.color}15` 
-          : isFeatured 
-            ? `0 0 15px ${project.color}05` 
-            : 'none',
+          ? `0 10px 30px ${project.color}25, inset 0 0 12px ${project.color}08` 
+          : hovered
+            ? `0 8px 24px ${project.color}15, inset 0 0 8px ${project.color}05`
+            : isFeatured 
+              ? `0 4px 15px ${project.color}05` 
+              : 'none',
         transition: `opacity 0.6s ease ${delay}ms, transform 0.6s ease ${delay}ms, border-color 0.3s, background 0.3s, box-shadow 0.3s`,
       }}
     >
@@ -476,30 +735,36 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
       <div style={{
         position: 'absolute',
         left: 0, top: 0, bottom: 0,
-        width: '3px',
+        width: hovered ? '6px' : '3px',
         background: project.color,
-        opacity: hovered ? 1 : 0.4,
-        transition: 'opacity 0.3s',
+        opacity: hovered ? 1 : 0.45,
+        boxShadow: hovered ? `0 0 12px ${project.color}` : 'none',
+        transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
       }} />
 
       {/* header */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1rem', flexWrap: 'wrap', gap: '0.5rem' }}>
-        <div>
-          <div style={{ color: 'var(--text-dim)', fontSize: '11px', marginBottom: '4px', letterSpacing: '0.1em' }}>
-            {isFeatured ? '$ project --featured' : '$ project --name'}
+        <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
+          <ProjectAvatars projectId={project.id} color={project.color} />
+          <div>
+            <div style={{ color: 'var(--text-dim)', fontSize: '11px', marginBottom: '4px', letterSpacing: '0.1em', fontFamily: 'var(--mono)' }}>
+              {terminalCommand}
+            </div>
+            <h3 style={{
+              fontFamily: 'var(--serif)',
+              fontSize: 'clamp(1.4rem, 3vw, 1.8rem)',
+              color: project.color,
+              fontWeight: 900,
+              lineHeight: 1.1,
+              textShadow: hovered ? `0 0 12px ${project.color}33` : 'none',
+              transition: 'text-shadow 0.3s ease',
+            }}>
+              {project.name}
+            </h3>
+            <p style={{ color: 'var(--text-dim)', fontSize: '12px', marginTop: '4px', fontStyle: 'italic' }}>
+              {project.tagline}
+            </p>
           </div>
-          <h3 style={{
-            fontFamily: 'var(--serif)',
-            fontSize: 'clamp(1.4rem, 3vw, 1.8rem)',
-            color: project.color,
-            fontWeight: 900,
-            lineHeight: 1.1,
-          }}>
-            {project.name}
-          </h3>
-          <p style={{ color: 'var(--text-dim)', fontSize: '12px', marginTop: '4px', fontStyle: 'italic' }}>
-            {project.tagline}
-          </p>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
           {isFeatured && (
@@ -546,9 +811,11 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
           <span key={t} style={{
             fontSize: '11px',
             padding: '2px 10px',
-            border: '1px solid var(--border-lit)',
-            color: 'var(--text-dim)',
+            border: hovered ? `1px solid ${project.color}44` : '1px solid var(--border-lit)',
+            color: hovered ? 'var(--text-bright)' : 'var(--text-dim)',
+            background: hovered ? `${project.color}08` : 'transparent',
             letterSpacing: '0.05em',
+            transition: 'all 0.3s ease',
           }}>
             {t}
           </span>
@@ -886,10 +1153,10 @@ export default function App() {
                 fontSize: '14px',
                 marginBottom: '2rem',
               }}>
-                Desenvolvedor Backend com foco em arquitetura robusta e escalabilidade. Especialista em ecossistemas Go, .NET e Python, construindo APIs RESTful, sistemas de CI/CD, integrações com IA generativa e soluções fullstack. Baseado em Bayeux, PB.
+                Desenvolvedor Backend focado em Go, .NET e Python, construindo sistemas distribuídos, APIs RESTful, integrações e produtos SaaS. Comprometido com rigor de engenharia de software e raciocínio arquitetural. Atuando diretamente de João Pessoa, PB.
               </p>
 
-              <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+              <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', alignItems: 'center' }}>
                 <a
                   href="#projetos"
                   style={{
@@ -899,24 +1166,84 @@ export default function App() {
                     padding: '8px 24px',
                     letterSpacing: '0.06em',
                     fontWeight: 500,
+                    transition: 'all 0.2s ease',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.opacity = '0.9'
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.opacity = '1'
                   }}
                 >
                   ver projetos ↓
                 </a>
-                <CopyEmailLink
-                  email="jeeh2200@gmail.com"
-                  defaultText="falar comigo"
+                <a
+                  href="https://wa.me/5583998442632"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    fontSize: '13px',
+                    color: '#0d0f0e',
+                    background: '#25D366',
+                    padding: '8px 24px',
+                    letterSpacing: '0.06em',
+                    fontWeight: 600,
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    textAlign: 'center',
+                    minWidth: '140px',
+                    border: '1px solid #25D366',
+                    transition: 'all 0.2s ease',
+                    textDecoration: 'none',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = 'transparent'
+                    e.currentTarget.style.color = '#25D366'
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = '#25D366'
+                    e.currentTarget.style.color = '#0d0f0e'
+                  }}
+                >
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    style={{ marginRight: '8px', display: 'inline-block', verticalAlign: 'middle' }}
+                  >
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.66.986 3.284 1.489 4.936 1.49 5.428 0 9.85-4.414 9.853-9.842.002-2.63-1.012-5.101-2.858-6.95S14.654 1.83 12.023 1.83C6.593 1.83 2.17 6.244 2.167 11.672c-.001 1.745.474 3.447 1.378 4.908l-.946 3.454 3.552-.924zm10.967-5.293c-.277-.139-1.64-.81-1.894-.901-.255-.093-.44-.139-.624.139-.186.278-.717.901-.88 1.088-.163.186-.326.21-.603.07-1.127-.563-1.95-.98-2.73-2.312-.206-.35-.206-.575-.022-.76.164-.165.326-.382.49-.573.164-.19.219-.324.329-.54.109-.217.055-.407-.028-.546-.082-.14-1.64-3.942-1.902-4.571-.256-.613-.518-.529-.71-.529-.182-.001-.392-.001-.602-.001-.21 0-.553.079-.844.397-.29.317-1.11 1.084-1.11 2.644 0 1.56 1.137 3.064 1.294 3.275.158.21 2.238 3.418 5.423 4.793.757.327 1.348.523 1.81.669.76.241 1.452.207 2.001.125.61-.092 1.64-.67 1.871-1.286.232-.617.232-1.146.163-1.258-.07-.112-.256-.15-.533-.29z"/>
+                  </svg>
+                  falar comigo
+                </a>
+                <a
+                  href={RESUME_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   style={{
                     fontSize: '13px',
                     color: 'var(--green)',
                     border: '1px solid var(--green)',
                     padding: '8px 24px',
                     letterSpacing: '0.06em',
-                    display: 'inline-block',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
                     textAlign: 'center',
-                    minWidth: '140px',
+                    minWidth: '110px',
+                    transition: 'all 0.2s ease',
+                    textDecoration: 'none',
                   }}
-                />
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = 'var(--green-dim)'
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = 'transparent'
+                  }}
+                >
+                  resumo
+                </a>
               </div>
             </div>
           </section>
@@ -938,7 +1265,7 @@ export default function App() {
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
               {PROJECTS.map((project, i) => (
-                <ProjectCard key={project.id} project={project} delay={i * 120} />
+                <ProjectCard key={project.id} project={project} delay={i * 120} index={i} />
               ))}
             </div>
           </section>
@@ -1008,8 +1335,9 @@ export default function App() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
               {[
                 { label: 'email', value: 'jeeh2200@gmail.com', isEmail: true },
+                { label: 'whatsapp', value: '+55 (83) 99844-2632', href: 'https://wa.me/5583998442632' },
                 { label: 'github', value: 'github.com/JanGustavo', href: 'https://github.com/JanGustavo' },
-                { label: 'localização', value: 'Bayeux, Paraíba — Brasil' },
+                { label: 'localização', value: 'João Pessoa, Paraíba — Brasil' },
               ].map(({ label, value, href, isEmail }) => (
                 <div key={label} style={{ display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '13px' }}>
                   <span style={{ color: 'var(--text-dim)', minWidth: '90px', fontSize: '11px', letterSpacing: '0.08em' }}>
@@ -1045,7 +1373,7 @@ export default function App() {
             fontSize: '11px',
             color: 'var(--text-dim)',
           }}>
-            <span>© 2025 Janderson Gustavo · Bayeux, PB</span>
+            <span>© 2026 Janderson Gustavo · João Pessoa, PB</span>
             <span style={{ color: 'var(--green-dim)' }}>
               feito com {'<'}código{'>'} e café
             </span>
