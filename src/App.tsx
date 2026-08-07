@@ -303,10 +303,10 @@ const PROJECTS: Project[] = [
   {
     id: 'stockwise',
     name: 'StockWise.NET',
-    tagline: 'Sistema de controle de estoque com CI/CD automatizado',
+    tagline: 'Sistema de controle de estoque fullstack em .NET 10 com Clean Architecture e CI/CD automatizado',
     description:
-      'Aplicação fullstack em .NET 10 com arquitetura em camadas (Clean Architecture), CRUD completo de produtos, gestão de pedidos (vendas e reposições), injeção de dependência nativa, exceções customizadas e pipeline CI/CD automatizado via GitHub Actions. Frontend responsivo em Blazor WebAssembly com consumo assíncrono da API RESTful.',
-    highlight: 'Clean Architecture + GitHub Actions CI/CD + PostgreSQL + EF Core + Blazor WASM',
+      'Sistema completo de controle de estoque (StockWise) em .NET 10 estruturado sob os princípios de Clean Architecture e DDD. Implementa consumo assíncrono de API RESTful em Blazor WebAssembly, persistência de dados otimizada com Entity Framework Core e PostgreSQL, e injeção de dependência nativa com tratamento global de exceções. O fluxo de entrega contínua é automatizado de ponta a ponta através de um pipeline robusto de CI/CD no GitHub Actions para build, testes automatizados e deploy.',
+    highlight: '.NET 10 (Web API) + Clean Architecture + Blazor WASM + Entity Framework Core + PostgreSQL + GitHub Actions',
     tech: ['C#', '.NET 10', 'PostgreSQL', 'EF Core', 'GitHub Actions', 'Blazor WASM'],
     tags: ['Backend', 'CI/CD', '.NET', 'Fullstack'],
     github: 'https://github.com/JanGustavo/CRUD-Controle-de-estoque',
@@ -318,10 +318,10 @@ const PROJECTS: Project[] = [
   {
     id: 'adotapet',
     name: 'AdotaPet API',
-    tagline: 'Backend RESTful com feed estilo Tinder para adoção de pets',
+    tagline: 'API RESTful em .NET 8 para adoção de pets com feed de match e autenticação JWT',
     description:
-      'API RESTful robusta em .NET 8 para plataforma de adoção de animais. Implementa autenticação JWT com hash BCrypt, feed paginado com lógica de interações (like/dislike), arquitetura em camadas (Minimal APIs), Entity Framework Core com migrations, documentação interativa via Swagger e tratamento de erros estruturado.',
-    highlight: 'JWT + BCrypt + EF Core Migrations + Swagger + Arquitetura em Camadas',
+      'API RESTful de alto desempenho para plataforma de adoção de animais estilo Tinder. Desenvolvida em .NET 8 com Minimal APIs e arquitetura em camadas, implementa autenticação JWT segura com criptografia BCrypt. Conta com feed dinâmico e paginado contendo lógica de interações (like/dislike/match), persistência com Entity Framework Core e SQLite, tratamento centralizado de exceções (Problem Details) e documentação interativa via Swagger.',
+    highlight: '.NET 8 Minimal APIs + JWT / BCrypt + Entity Framework Core + SQLite + Swagger UI',
     tech: ['C#', '.NET 8', 'Entity Framework', 'SQLite', 'JWT', 'Swagger'],
     tags: ['API REST', 'Backend', '.NET', 'Autenticação'],
     github: 'https://github.com/JanGustavo/AdotaPet-Api',
@@ -333,10 +333,10 @@ const PROJECTS: Project[] = [
   {
     id: 'moletom',
     name: 'MoleTom Store',
-    tagline: 'E-commerce print-on-demand com IA generativa e PIX nativo',
+    tagline: 'E-commerce print-on-demand em Flask com IA generativa resiliente e emissor de PIX dinâmico',
     description:
-      'Plataforma de e-commerce de vestuário onde usuários criam estampas exclusivas via IA generativa. O sistema conta com arquitetura de templates modularizados em Jinja2 (reduzindo redundância em 70%), persistência de estado para retomada de fluxo de compra pós-login, e pipeline resiliente de geração de imagem (com retentativas de IA e fallback local). Banco de dados tolerante a falhas de conexão externa com desvio automático (PostgreSQL / SQLite). Pagamentos PIX nativos gerados via BR Code/EMV dinâmico com validador CRC-16.',
-    highlight: 'IA Resiliente (Flux/Turbo Failover) + Auto-resume UX + Banco Self-Healing + PIX Emissor Nativo',
+      'Plataforma completa de e-commerce print-on-demand onde usuários geram estampas personalizadas via inteligência artificial (Pollinations.ai/Flux). O sistema é estruturado em Flask com templates modulares Jinja2 e arquitetura tolerante a falhas: pipeline de geração de imagens resiliente com retentativas e fallback local (Pillow), banco de dados com failover automático e desvio de conexão (PostgreSQL / SQLite), e persistência de estado (Auto-resume UX) para retenção de carrinho pós-login. Os pagamentos são processados de forma nativa via geração de BR Code/EMV dinâmico com validador de integridade CRC-16.',
+    highlight: 'Flask + SQLAlchemy + IA Generativa (Flux/Failover) + Banco Self-Healing + Emissor PIX (EMV/CRC-16)',
     tech: [
       'Python',
       'Flask',
@@ -357,10 +357,10 @@ const PROJECTS: Project[] = [
   {
     id: 'radar',
     name: 'Telegram Radar',
-    tagline: 'Monitor de ofertas em tempo real com extensão de navegador',
+    tagline: 'Monitor de ofertas do Telegram em FastAPI com extensão de navegador Chrome e raspagem assíncrona',
     description:
-      'Solução completa fullstack para monitoramento automatizado de grupos e canais do Telegram. Backend em FastAPI com Telethon para integração MTProto, processamento assíncrono com Asyncio, web scraping com BeautifulSoup. Extensão de navegador moderna com design glassmorphism, filtros inteligentes, blacklist dinâmica e sincronização de estado em tempo real. Deploy containerizado com Docker.',
-    highlight: 'Telegram MTProto API + FastAPI + Telethon + Chrome Extension + Docker',
+      'Solução fullstack para monitoramento em tempo real e raspagem automatizada de ofertas em canais e grupos do Telegram. O backend é construído em FastAPI utilizando processamento assíncrono (Asyncio) com biblioteca Telethon (MTProto API) e raspagem estruturada via BeautifulSoup. O ecossistema inclui uma extensão de navegador (Chrome Extension) em vanilla JavaScript com design moderno em glassmorphism, filtros e blacklist dinâmicos em segundo plano, e sincronização de estado assíncrona. O deploy é otimizado através de containers Docker.',
+    highlight: 'FastAPI + Telethon (MTProto) + Asyncio + Chrome Extension (Glassmorphism) + Docker',
     tech: ['Python', 'FastAPI', 'Telethon', 'BeautifulSoup', 'Asyncio', 'JavaScript', 'Docker'],
     tags: ['Bot', 'Telegram', 'Web Scraping', 'Fullstack'],
     github: 'https://github.com/JanGustavo/telegram-PromoPulse-extension',
@@ -372,10 +372,10 @@ const PROJECTS: Project[] = [
   {
     id: 'worldcup',
     name: 'World Cup Simulator',
-    tagline: 'Simulador estatístico da Copa do Mundo FIFA 2026 com Monte Carlo e Streamlit',
+    tagline: 'Simulador estatístico da Copa do Mundo de 48 seleções com Monte Carlo e Streamlit',
     description:
-      'Plataforma estatística para previsão de cenários e probabilidades de classificação na Copa do Mundo de 48 seleções. Utiliza simulações de Monte Carlo executando 1 milhão de iterações com geração de gols via Distribuição de Poisson (ponderada exponencialmente pela diferença de Rating FIFA). O algoritmo gerencia de forma otimizada os critérios de desempate e a complexa repescagem dos terceiros colocados. Interface interativa construída em Streamlit para visualização dinâmica de probabilidades em tempo real.',
-    highlight: 'Monte Carlo Simulations + Poisson Distribution + Vectorized Engine + Streamlit UI',
+      'Plataforma analítica e estatística para simulação de cenários e probabilidades da Copa do Mundo FIFA 2026. Desenvolvida em Python com motor de simulação vetorizado via NumPy e Pandas, executa simulações de Monte Carlo (1 milhão de iterações) estimando gols através de Distribuição de Poisson, ponderada exponencialmente pelo Rating FIFA das seleções. O algoritmo mapeia de forma otimizada as complexas regras de desempate e a repescagem dos melhores terceiros colocados, servindo os dados em tempo real em um painel interativo em Streamlit com visualizações em Matplotlib.',
+    highlight: 'Python + Streamlit + Monte Carlo Simulations + Poisson Distribution + NumPy & Pandas',
     tech: ['Python', 'Streamlit', 'NumPy', 'Pandas', 'Matplotlib'],
     tags: ['Data Science', 'Estatística', 'Python', 'Web App'],
     github: 'https://github.com/JanGustavo/world-cup-simulator',
@@ -1009,8 +1009,11 @@ function SkillsSection({ selectedSkill, setSelectedSkill }: { selectedSkill: str
                           setSelectedSkill(null);
                         } else {
                           setSelectedSkill(item);
-                          const el = document.getElementById('projetos');
-                          if (el) el.scrollIntoView({ behavior: 'smooth' });
+                          const hasProjects = PROJECTS.some(p => matchTech(p.tech, item));
+                          if (hasProjects) {
+                            const el = document.getElementById('projetos');
+                            if (el) el.scrollIntoView({ behavior: 'smooth' });
+                          }
                         }
                       }}
                       style={{
@@ -1196,6 +1199,18 @@ export default function App() {
 
   const { displayed, done } = useTypewriter(BOOT_LINES, 38)
   const [selectedSkill, setSelectedSkill] = useState<string | null>(null)
+  const [isResumeOpen, setIsResumeOpen] = useState(false)
+
+  useEffect(() => {
+    if (isResumeOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isResumeOpen]);
 
   return (
     <>
@@ -1340,14 +1355,13 @@ export default function App() {
                   </svg>
                   falar comigo
                 </a>
-                <a
-                  href={RESUME_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  onClick={() => setIsResumeOpen(true)}
                   style={{
                     fontSize: '13px',
                     color: 'var(--green)',
                     border: '1px solid var(--green)',
+                    background: 'transparent',
                     padding: '8px 24px',
                     letterSpacing: '0.06em',
                     display: 'inline-flex',
@@ -1356,7 +1370,7 @@ export default function App() {
                     textAlign: 'center',
                     minWidth: '110px',
                     transition: 'all 0.2s ease',
-                    textDecoration: 'none',
+                    cursor: 'pointer',
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.background = 'var(--green-dim)'
@@ -1366,7 +1380,7 @@ export default function App() {
                   }}
                 >
                   resumo
-                </a>
+                </button>
               </div>
             </div>
           </section>
@@ -1488,7 +1502,7 @@ export default function App() {
               Contato
             </h2>
             <p style={{ color: 'var(--text)', marginBottom: '2rem', maxWidth: '440px', lineHeight: 1.8 }}>
-              Aberto a oportunidades de estágio e desenvolvimento júnior. Me manda um email ou conecta no GitHub.
+              Aberto a oportunidades de estágio e desenvolvimento júnior. Me manda um email, me chama no WhatsApp ou conecta no GitHub.
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
               {[
@@ -1539,6 +1553,114 @@ export default function App() {
 
         </div>
       </main>
+
+      {/* RESUME MODAL */}
+      {isResumeOpen && (
+        <div style={{
+          position: 'fixed',
+          top: 0, left: 0, right: 0, bottom: 0,
+          zIndex: 1000,
+          background: 'rgba(13, 15, 14, 0.95)',
+          backdropFilter: 'blur(10px)',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          padding: 'clamp(1rem, 3vw, 2rem)',
+        }}>
+          {/* Modal Card */}
+          <div style={{
+            position: 'relative',
+            width: '100%',
+            maxWidth: '900px',
+            height: '90vh',
+            background: 'var(--bg-card)',
+            border: '1px solid var(--border)',
+            display: 'flex',
+            flexDirection: 'column',
+            animation: 'fadeUp 0.3s ease both',
+          }}>
+            {/* Header / Control Bar */}
+            <div style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              padding: '1rem 1.5rem',
+              borderBottom: '1px solid var(--border)',
+              flexWrap: 'wrap',
+              gap: '0.8rem',
+            }}>
+              <span style={{ fontFamily: 'var(--mono)', fontSize: '13px', color: 'var(--green)' }}>
+                resumo.pdf
+              </span>
+              <div style={{ display: 'flex', gap: '0.8rem', alignItems: 'center' }}>
+                <a
+                  href="https://drive.google.com/uc?export=download&id=12wqMWjRZH9ga4APb3r7pRg4s7kitIsMh"
+                  download="Janderson_Gustavo_Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    fontSize: '12px',
+                    color: 'var(--bg)',
+                    background: 'var(--green)',
+                    padding: '6px 16px',
+                    letterSpacing: '0.06em',
+                    fontWeight: 500,
+                    textDecoration: 'none',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    cursor: 'pointer',
+                  }}
+                >
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ marginRight: '6px' }}>
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                  </svg>
+                  baixar pdf
+                </a>
+                <button
+                  onClick={() => setIsResumeOpen(false)}
+                  style={{
+                    background: 'transparent',
+                    border: '1px solid var(--border)',
+                    color: 'var(--text-dim)',
+                    padding: '6px 12px',
+                    fontSize: '12px',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '4px',
+                  }}
+                  onMouseEnter={e => {
+                    e.currentTarget.style.borderColor = 'var(--green)';
+                    e.currentTarget.style.color = 'var(--green)';
+                  }}
+                  onMouseLeave={e => {
+                    e.currentTarget.style.borderColor = 'var(--border)';
+                    e.currentTarget.style.color = 'var(--text-dim)';
+                  }}
+                >
+                  fechar ✕
+                </button>
+              </div>
+            </div>
+
+            {/* Document Content (Iframe) */}
+            <div style={{ flex: 1, background: '#1e2421', position: 'relative' }}>
+              <iframe
+                src="https://drive.google.com/file/d/12wqMWjRZH9ga4APb3r7pRg4s7kitIsMh/preview"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  border: 'none',
+                }}
+                title="Visualizador de Currículo"
+                allow="autoplay"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </>
   )
 }
